@@ -1,0 +1,156 @@
+/* Zera margens e garante que ocupe toda a tela */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+} 
+
+.home-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hero principal com imagem full screen */
+.home-header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('../assets/bmw.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.home-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 350px; /* altura do fade */
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, #f5f5f5 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Camada de leve escurecimento para melhorar contraste do texto */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
+  z-index: 1;
+  padding: 60px 20px;
+}
+
+/* Título */
+.overlay h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #32c3e7;
+  margin-bottom: 15px;
+}
+
+/* Subtítulo */
+.overlay p {
+  font-size: 1.3rem;
+  color: #f0f0f0;
+  margin-bottom: 40px;
+}
+
+/* Cards ficam abaixo do texto */
+.overlay .card-home {
+  margin-top: 20px;
+}
+
+/* Seção abaixo da imagem */
+.continuacao {
+  width: 100%;
+  text-align: center;
+  padding: 10%;
+  background-color: #f5f5f5;
+}
+
+.contunuacao p {
+    color: #da1111;
+}
+
+
+.continuacao h2 {
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.continuacao p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.cars {
+    margin-top: -10%;
+    font-size: 1.2rem;
+    color: #555;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    background-color: #f5f5f5;
+    padding: 10%;
+}
+.cars-info {
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    margin-bottom: 20px;
+}
+.cars-info p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.modeloCarros {
+  margin-top: 40px;
+  font-size: 1.2rem;
+  color: #555;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.carroModelo {
+  background-color: #ffffff;
+  padding: 15px 25px;
+  border-radius: 8px;
+  width: 20%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carroModelo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+.carroModelo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
