@@ -1,0 +1,260 @@
+.carros-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.button {
+  border: 'none';
+  background-color: #2980b9;
+  border-radius: 8px;
+  color: white;
+}
+
+.carros-page h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #2c3e50;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.carros-page p {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #34495e;
+  font-size: 1.2em;
+  font-weight: 300;
+}
+
+.search-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 40px;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar {
+  flex: 1;
+  min-width: 250px;
+  padding: 15px;
+  border: 2px solid #3498db;
+  border-radius: 25px;
+  font-size: 16px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+  outline: none;
+  border-color: #2980b9;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+}
+
+.filter-select,
+.filter-input {
+  padding: 15px;
+  border: 2px solid #3498db;
+  border-radius: 25px;
+  font-size: 16px;
+  min-width: 180px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.filter-select:focus,
+.filter-input:focus {
+  outline: none;
+  border-color: #2980b9;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+}
+
+.cars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.car-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.car-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, red, #2980b9);
+}
+
+.car-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.car-card h3 {
+  margin: 15px 0 10px;
+  font-size: 20px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.car-card p {
+  margin: 5px 0;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+  .carros-page {
+    padding: 15px;
+  }
+
+  .search-filters {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-bar,
+  .filter-select,
+  .filter-input {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .cars-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .car-card {
+    padding: 10px;
+  }
+
+  .car-image {
+    height: 120px;
+  }
+}
+
+/* Responsividade para celulares pequenos */
+@media (max-width: 480px) {
+  .carros-page {
+    padding: 10px;
+  }
+
+  .carros-page h1 {
+    font-size: 24px;
+  }
+
+  .carros-page p {
+    font-size: 14px;
+  }
+
+  .search-filters {
+    gap: 8px;
+  }
+
+  .search-bar,
+  .filter-select,
+  .filter-input {
+    padding: 8px;
+    font-size: 14px;
+    min-width: auto;
+  }
+
+  .cars-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .car-card {
+    padding: 8px;
+  }
+
+  .car-image {
+    height: 100px;
+  }
+
+  .car-card h3 {
+    font-size: 16px;
+  }
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  position: relative;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.modal-content p {
+  margin: 10px 0;
+  color: #000000;
+}
+
+.modal-content button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.modal-content button:hover {
+  background: #2980b9;
+}
+
+/* Responsividade para celulares médios */
+@media (min-width: 481px) and (max-width: 767px) {
+  .cars-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+
+  .car-image {
+    height: 130px;
+  }
+}

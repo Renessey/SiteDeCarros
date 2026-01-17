@@ -7,9 +7,10 @@
 
 body {
     margin: 0;
+    padding-top: 60px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f5f5f5;
-} 
+}
 
 .home-container {
   width: 100%;
@@ -60,9 +61,9 @@ body {
 
 /* Título */
 .overlay h1 {
-  font-size: 3rem;
+  font-size: clamp(1.1rem, 4vw, 3rem);
   font-weight: bold;
-  color: #32c3e7;
+  color: #ffffff;
   margin-bottom: 15px;
 }
 
@@ -86,10 +87,9 @@ body {
   background-color: #f5f5f5;
 }
 
-.contunuacao p {
+.continuacao p {
     color: #da1111;
 }
-
 
 .continuacao h2 {
   font-size: 2rem;
@@ -103,22 +103,26 @@ body {
   line-height: 1.6;
 }
 
+.texto1 {
+  margin-bottom: 10rem;
+}
+
 .cars {
-    margin-top: -10%;
+    margin-top: 10%;
     font-size: 1.2rem;
     color: #555;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 30px;
-    background-color: #f5f5f5;
+    gap: 8rem;
+    background-color: #000000;
     padding: 10%;
 }
 .cars-info {
     padding: 25px;
     text-align: center;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
-    margin-bottom: 20px;
+    margin-bottom: -70px;
 }
 .cars-info p {
     color: #555;
@@ -135,7 +139,7 @@ body {
   gap: 10px;
 }
 .carroModelo {
-  background-color: #ffffff;
+  background-color: #131313;
   padding: 15px 25px;
   border-radius: 8px;
   width: 20%;
@@ -153,4 +157,295 @@ body {
 .carroModelo:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Animações */
+
+/* Typing Effect */
+.typing {
+  overflow: hidden;
+}
+
+/* Fade In */
+.fade-in {
+  opacity: 1;
+  color: #ffffff;
+  margin-top: 1rem;
+  transform: translateY(0);
+  transition: opacity 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered fade-in delays for sections */
+.continuacao .fade-in {
+  transition-delay: 0.2s;
+}
+
+.cars .fade-in {
+  transition-delay: 0.4s;
+}
+
+.modeloCarros .fade-in {
+  transition-delay: 0.6s;
+}
+
+/* Text Reveal */
+.text-reveal {
+  position: relative;
+  overflow: hidden;
+}
+
+.text-reveal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #cce732, transparent);
+  animation: reveal 2s ease-out;
+}
+
+@keyframes reveal {
+  0% { left: -100%; }
+  50% { left: 0; }
+  100% { left: 100%; }
+}
+
+/* Responsividade */
+@media (max-width: 425px) {
+  .home-header {
+    height: 80vh;
+  }
+
+  .overlay h1 {
+    font-size: 0.4rem;
+  }
+  .typing {
+    font-size: 10px;
+  }
+
+  .overlay p {
+    font-size: 1rem;
+  }
+
+  .continuacao {
+    padding: 20px;
+  }
+
+  .cars {
+    padding: 20px;
+    margin-top: 0;
+  }
+
+  .modeloCarros {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .carroModelo {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-header {
+    height: 90vh;
+  }
+
+  .overlay h1 {
+    font-size: 2.5rem;
+  }
+
+  .overlay p {
+    font-size: 1.2rem;
+  }
+
+  .continuacao {
+    padding: 5%;
+  }
+
+  .cars {
+    padding: 5%;
+    margin-top: -5%;
+  }
+
+  .modeloCarros {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .carroModelo {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .modeloCarros {
+    flex-direction: row;
+  }
+
+  .carroModelo {
+    width: 20%;
+  }
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+  text-align: left;
+}
+
+.footer-section h3, .footer-section h4 {
+  color: #ffffff;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.footer-section p {
+  color: #cccccc;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.social-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #007bff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333333;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.footer-bottom p {
+  color: #cccccc;
+  font-size: 0.9rem;
+}
+
+/* Footer Responsividade */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 15px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    margin: 20px 0;
+    text-align: center;
+    min-width: auto;
+    width: 100%;
+  }
+
+  .footer-section h3, .footer-section h4 {
+    font-size: 1.1rem;
+  }
+
+  .footer-section p {
+    font-size: 0.85rem;
+  }
+
+  .social-links {
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .social-links a {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 10px;
+  }
+
+  .footer-section h3, .footer-section h4 {
+    font-size: 1rem;
+  }
+
+  .footer-section p {
+    font-size: 0.8rem;
+  }
+
+  .social-links {
+    gap: 15px;
+  }
+
+  .social-links a {
+    font-size: 1rem;
+  }
+
+  .footer-bottom p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    padding: 50px 30px;
+  }
+
+  .footer-content {
+    justify-content: space-between;
+  }
+
+  .footer-section {
+    flex: 1;
+    margin: 0 20px;
+  }
+
+  .footer-section h3, .footer-section h4 {
+    font-size: 1.4rem;
+  }
+
+  .footer-section p {
+    font-size: 1rem;
+  }
+
+  .social-links a {
+    font-size: 1.3rem;
+  }
 }

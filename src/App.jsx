@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "../src/components/header.jsx";
 import HomeLandingPage from "./pages/HomeLandingPage";
 import Carros from "./pages/Carros";
-import Contato from "./pages/Contato";
+import Sobre from "./pages/Sobre";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeLandingPage />} />
         <Route path="/carros" element={<Carros />} />
-        <Route path="/contato" element={<Contato />} />
+        <Route path="/Sobre" element={<Sobre />} />
       </Routes>
     </Router>
   );
