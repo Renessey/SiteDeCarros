@@ -90,17 +90,17 @@ export default function HomeLandingPage() {
 
         <section ref={modeloCarrosRef} className="modeloCarros fade-in">
           <div className="carroModelo">
-            <img src="/src/assets/esportivo.png" alt="Carro Modelo 1" />
+            <img src="./imagens/esportivo.png" alt="Carro Modelo 1" />
             <h3 style={{color: 'red'}}>Modelo Esportivo X</h3>
             <p>Desempenho excepcional com design aerodinâmico.</p>
           </div>
           <div className="carroModelo">
-            <img src="/src/assets/familiar.png" alt="Carro Modelo 2" />
+            <img src="./imagens/familiar.png" alt="Carro Modelo 2" />
             <h3 style={{color: 'red'}}>Modelo Familiar Y</h3>
             <p>Espaço e conforto para toda a família.</p>
           </div>
           <div className="carroModelo">
-            <img src="/src/assets/byd.webp" alt="Carro Modelo 3" />
+            <img src="./imagens/byd.webp" alt="Carro Modelo 3" />
             <h3 style={{color: 'red'}}>Modelo Elétrico Z</h3>
             <p>Tecnologia avançada com sustentabilidade.</p>
           </div>
